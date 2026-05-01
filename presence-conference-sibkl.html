@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Presence Conference 2026 — SIBKL's annual youth conference. August 13–15, 2026 at Idea Live Arena, 3 Damansara, Petaling Jaya.">
+<meta name="theme-color" content="#FAF6EF" id="metaThemeColor">
+<meta property="og:title" content="Presence Conference 2026 — SIBKL">
+<meta property="og:description" content="A generation gathering to encounter God, reclaim worship, and ignite purpose. August 13–15, 2026 · Idea Live Arena, 3 Damansara.">
+<meta property="og:type" content="website">
+<title>PRESENCE CONF — SIBKL 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --gold: #F5C842;
+    --gold2: #E8A020;
+    --cream: #FAF6EF;
+    --deep: #0A080E;
+    --purple: #1A0A2E;
+    --violet: #4A1D96;
+    --electric: #7C3AED;
+    --glow: #A855F7;
+    --pink: #EC4899;
+    --sky: #38BDF8;
+    --white: #FFFFFF;
+    --glass: rgba(255,255,255,0.06);
+    --glass2: rgba(255,255,255,0.12);
+    --stroke: rgba(255,255,255,0.1);
+  }
+
+  [data-theme="light"] {
+    --bg: var(--cream);
+    --text-primary: #0A080E;
+    --text-muted: #4B4458;
+    --card-bg: rgba(255,255,255,0.8);
+    --card-stroke: rgba(10,8,14,0.08);
+    --nav-bg: rgba(250,246,239,0.85);
+    --section-alt: #F0EBE3;
+    --dot-color: rgba(124,58,237,0.15);
+  }
+
+  [data-theme="dark"] {
+    --bg: var(--deep);
+    --text-primary: #FAF6EF;
+    --text-muted: rgba(250,246,239,0.55);
+    --card-bg: rgba(255,255,255,0.05);
+    --card-stroke: rgba(255,255,255,0.08);
+    --nav-bg: rgba(10,8,14,0.85);
+    --section-alt: rgba(26,10,46,0.6);
+    --dot-color: rgba(168,85,247,0.12);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Syne', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    transition: background 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* CUSTOM CURSOR */
+  .cursor {
+    position: fixed;
+    width: 12px; height: 12px;
+    background: var(--gold);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.05s linear, width 0.2s, height 0.2s, background 0.2s;
+    mix-blend-mode: difference;
+  }
+  .cursor-ring {
+    position: fixed;
+    width: 36px; height: 36px;
+    border: 1.5px solid var(--gold);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.12s ease-out, width 0.3s, height 0.3s, border-color 0.2s;
+    mix-blend-mode: difference;
+    opacity: 0.7;
+  }
+  body:hover .cursor { opacity: 1; }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 1.2rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: var(--nav-bg);
+    border-bottom: 1px solid var(--card-stroke);
+    transition: background 0.4s;
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.12em;
+    color: var(--text-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .nav-logo-badge {
+    background: var(--gold);
+    color: var(--deep);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    padding: 2px 7px;
+    border-radius: 20px;
+    letter-spacing: 0.08em;
+    font-weight: 400;
+    transform: translateY(-1px);
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-right { display: flex; align-items: center; gap: 1rem; }
+  .theme-toggle {
+    width: 42px; height: 24px;
+    background: var(--card-stroke);
+    border-radius: 30px;
+    border: 1px solid var(--stroke);
+    cursor: pointer;
+    position: relative;
+    transition: background 0.3s;
+    flex-shrink: 0;
+  }
+  [data-theme="dark"] .theme-toggle { background: rgba(168,85,247,0.3); border-color: var(--glow); }
+  .toggle-thumb {
+    position: absolute;
+    top: 3px; left: 3px;
+    width: 16px; height: 16px;
+    background: var(--gold);
+    border-radius: 50%;
+    transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  [data-theme="dark"] .toggle-thumb { transform: translateX(18px); background: var(--glow); }
+  .nav-cta {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--gold);
+    color: var(--deep);
+    border: none;
+    padding: 0.55rem 1.3rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 400;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .nav-cta:hover { transform: scale(1.04); box-shadow: 0 0 20px rgba(245,200,66,0.4); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 7rem 2rem 4rem;
+    overflow: hidden;
+  }
+
+  /* Animated 3D grid background */
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(168,85,247,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(168,85,247,0.07) 1px, transparent 1px);
+    background-size: 60px 60px;
+    transform: perspective(600px) rotateX(35deg) scaleX(1.4) translateY(15%);
+    transform-origin: bottom center;
+    pointer-events: none;
+    mask-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%);
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%);
+  }
+  [data-theme="light"] .hero-grid {
+    background-image:
+      linear-gradient(rgba(124,58,237,0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(124,58,237,0.1) 1px, transparent 1px);
+  }
+
+  /* Floating orbs */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    animation: orbFloat 8s ease-in-out infinite;
+  }
+  .orb1 {
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(124,58,237,0.35) 0%, transparent 70%);
+    top: -10%; left: -15%;
+    animation-delay: 0s;
+  }
+  .orb2 {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(236,72,153,0.25) 0%, transparent 70%);
+    top: 20%; right: -10%;
+    animation-delay: -3s;
+  }
+  .orb3 {
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, rgba(245,200,66,0.2) 0%, transparent 70%);
+    bottom: 10%; left: 30%;
+    animation-delay: -6s;
+  }
+  @keyframes orbFloat {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-30px) scale(1.05); }
+  }
+  [data-theme="light"] .orb1 {
+    background: radial-gradient(circle, rgba(124,58,237,0.15) 0%, transparent 70%);
+  }
+  [data-theme="light"] .orb2 {
+    background: radial-gradient(circle, rgba(236,72,153,0.12) 0%, transparent 70%);
+  }
+  [data-theme="light"] .orb3 {
+    background: radial-gradient(circle, rgba(245,200,66,0.18) 0%, transparent 70%);
+  }
+
+  /* Noise texture overlay */
+  .noise {
+    position: fixed;
+    inset: 0;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px;
+  }
+
+  /* Floating badge */
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-stroke);
+    border-radius: 30px;
+    padding: 0.45rem 1rem 0.45rem 0.6rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+    animation: fadeSlideUp 0.8s ease both;
+  }
+  .badge-dot {
+    width: 6px; height: 6px;
+    background: var(--glow);
+    border-radius: 50%;
+    animation: pulse 2s ease infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(168,85,247,0.6); }
+    50% { box-shadow: 0 0 0 5px rgba(168,85,247,0); }
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+    animation: fadeSlideUp 0.8s 0.1s ease both;
+  }
+
+  /* GIANT HEADLINE */
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(6rem, 16vw, 14rem);
+    line-height: 0.88;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+    position: relative;
+    animation: fadeSlideUp 0.9s 0.2s ease both;
+    margin-bottom: 0.3rem;
+  }
+  .hero-title .word-presence {
+    display: block;
+    position: relative;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-primary) 40%, var(--gold) 70%, var(--gold2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  [data-theme="light"] .hero-title .word-presence {
+    background: linear-gradient(135deg, #0A080E 0%, #0A080E 35%, #7C3AED 65%, #4A1D96 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  .hero-title .word-conf {
+    display: block;
+    font-size: 0.45em;
+    letter-spacing: 0.25em;
+    color: var(--text-muted);
+    -webkit-text-fill-color: var(--text-muted);
+    background: none;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    margin-top: -0.1em;
+  }
+  .hero-title .word-year {
+    display: block;
+    font-size: 0.22em;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.5em;
+    color: var(--text-muted);
+    -webkit-text-fill-color: var(--text-muted);
+    background: none;
+    margin-top: 0.5em;
+  }
+
+  /* 3D Text shadow effect */
+  .hero-title-3d {
+    position: relative;
+    display: inline-block;
+  }
+  .hero-title-3d::after {
+    content: 'PRESENCE';
+    position: absolute;
+    top: 6px; left: 6px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(168,85,247,0.2);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .hero-sub {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: var(--text-muted);
+    max-width: 520px;
+    line-height: 1.7;
+    margin: 2rem auto 2.5rem;
+    animation: fadeSlideUp 0.9s 0.35s ease both;
+  }
+  .hero-sub strong { color: var(--text-primary); font-weight: 600; }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeSlideUp 0.9s 0.5s ease both;
+    margin-bottom: 3rem;
+  }
+
+  .btn-primary {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    background: var(--gold);
+    color: var(--deep);
+    border: none;
+    padding: 0.9rem 2.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.3s;
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, transparent 60%);
+    border-radius: inherit;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 8px 40px rgba(245,200,66,0.5), 0 2px 8px rgba(0,0,0,0.2);
+  }
+  .btn-secondary {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--card-stroke);
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    backdrop-filter: blur(10px);
+  }
+  .btn-secondary:hover {
+    border-color: var(--glow);
+    background: rgba(168,85,247,0.08);
+  }
+
+  /* HERO STATS */
+  .hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeSlideUp 1s 0.65s ease both;
+  }
+  .stat-item {
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  [data-theme="light"] .stat-num {
+    background: linear-gradient(135deg, var(--violet) 0%, var(--electric) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+  }
+
+  /* Scroll indicator */
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    animation: fadeSlideUp 1s 1s ease both;
+  }
+  .scroll-hint span {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .scroll-mouse {
+    width: 22px; height: 34px;
+    border: 1.5px solid var(--text-muted);
+    border-radius: 11px;
+    position: relative;
+    opacity: 0.5;
+  }
+  .scroll-mouse::after {
+    content: '';
+    position: absolute;
+    top: 5px; left: 50%;
+    transform: translateX(-50%);
+    width: 3px; height: 6px;
+    background: var(--gold);
+    border-radius: 2px;
+    animation: scrollDot 1.8s ease infinite;
+  }
+  @keyframes scrollDot {
+    0% { transform: translateX(-50%) translateY(0); opacity: 1; }
+    100% { transform: translateX(-50%) translateY(12px); opacity: 0; }
+  }
+
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ====== SECTIONS ====== */
+  section {
+    position: relative;
+    z-index: 2;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  [data-theme="light"] .section-label { color: var(--violet); }
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 20px; height: 1px;
+    background: var(--gold);
+  }
+  [data-theme="light"] .section-label::before { background: var(--violet); }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: 0.9;
+    color: var(--text-primary);
+    letter-spacing: 0.01em;
+  }
+
+  /* ====== MARQUEE BAND ====== */
+  .marquee-band {
+    overflow: hidden;
+    padding: 1.2rem 0;
+    background: var(--gold);
+    position: relative;
+    z-index: 3;
+  }
+  .marquee-track {
+    display: flex;
+    gap: 0;
+    animation: marquee 20s linear infinite;
+    white-space: nowrap;
+  }
+  .marquee-item {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    color: var(--deep);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+  .marquee-item .dot { width: 6px; height: 6px; background: rgba(10,8,14,0.3); border-radius: 50%; }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ====== ABOUT / MANIFESTO ====== */
+  .about {
+    padding: 8rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  @media (max-width: 768px) { .about { grid-template-columns: 1fr; gap: 3rem; } }
+
+  .about-visual {
+    position: relative;
+    aspect-ratio: 1;
+  }
+  .about-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid;
+    animation: ringRotate 20s linear infinite;
+  }
+  .ring1 {
+    inset: 0;
+    border-color: rgba(168,85,247,0.2);
+    animation-duration: 25s;
+  }
+  .ring2 {
+    inset: 12%;
+    border-color: rgba(245,200,66,0.25);
+    animation-duration: 18s;
+    animation-direction: reverse;
+  }
+  .ring3 {
+    inset: 24%;
+    border-color: rgba(236,72,153,0.2);
+    animation-duration: 12s;
+  }
+  @keyframes ringRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .about-center-blob {
+    position: absolute;
+    inset: 30%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(124,58,237,0.5) 0%, rgba(168,85,247,0.2) 50%, transparent 80%);
+    animation: blobPulse 4s ease-in-out infinite;
+  }
+  [data-theme="light"] .about-center-blob {
+    background: radial-gradient(circle, rgba(124,58,237,0.35) 0%, rgba(168,85,247,0.15) 50%, transparent 80%);
+  }
+  @keyframes blobPulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+  }
+  .about-ring-dot {
+    position: absolute;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    top: 0; left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 12px var(--gold);
+  }
+
+  .about-text { padding: 1rem 0; }
+  .about-body {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+    margin-top: 1.8rem;
+  }
+  .about-body .highlight {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+  .about-quote {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    border-left: 3px solid var(--gold);
+    background: var(--card-bg);
+    border-radius: 0 12px 12px 0;
+    backdrop-filter: blur(10px);
+  }
+  [data-theme="light"] .about-quote { border-left-color: var(--violet); }
+  .about-quote blockquote {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.5;
+  }
+  .about-quote cite {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    margin-top: 0.6rem;
+    font-style: normal;
+  }
+
+  /* ====== SPEAKERS ====== */
+  .speakers-section {
+    padding: 6rem 2rem;
+    background: var(--section-alt);
+    overflow: hidden;
+  }
+  .speakers-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .speakers-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 3.5rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  .speaker-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-stroke);
+    border-radius: 20px;
+    padding: 1.8rem;
+    backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s;
+    cursor: default;
+  }
+  .speaker-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--glow));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .speaker-card:hover { transform: translateY(-8px) scale(1.02); }
+  .speaker-card:hover::before { opacity: 1; }
+  [data-theme="dark"] .speaker-card:hover { box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(168,85,247,0.1); }
+  [data-theme="light"] .speaker-card:hover { box-shadow: 0 20px 60px rgba(74,29,150,0.1); }
+
+  .speaker-avatar {
+    width: 70px; height: 70px;
+    border-radius: 50%;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    color: var(--deep);
+    position: relative;
+    flex-shrink: 0;
+  }
+  .speaker-avatar::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--glow), var(--pink));
+    z-index: -1;
+  }
+  .speaker-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+  }
+  .speaker-role {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+  .speaker-origin {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--gold);
+    border: 1px solid rgba(245,200,66,0.3);
+    padding: 2px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  [data-theme="light"] .speaker-origin { color: var(--violet); border-color: rgba(124,58,237,0.3); }
+  .speaker-card .speaker-topic {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+
+  /* ====== SCHEDULE ====== */
+  .schedule-section {
+    padding: 8rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .schedule-header { margin-bottom: 4rem; }
+  .schedule-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-stroke);
+    border-radius: 50px;
+    padding: 4px;
+    backdrop-filter: blur(10px);
+    width: fit-content;
+  }
+  .sched-tab {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    padding: 0.55rem 1.4rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .sched-tab.active {
+    background: var(--gold);
+    color: var(--deep);
+  }
+  [data-theme="light"] .sched-tab.active { background: var(--violet); color: white; }
+  .schedule-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .sched-item {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-stroke);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    transition: border-color 0.2s, transform 0.2s;
+    cursor: default;
+  }
+  .sched-item:hover { border-color: rgba(168,85,247,0.4); transform: translateX(4px); }
+  [data-theme="light"] .sched-item:hover { border-color: rgba(124,58,237,0.4); }
+  .sched-time {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    padding-top: 0.1rem;
+  }
+  [data-theme="light"] .sched-time { color: var(--violet); }
+  .sched-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+  }
+  .sched-speaker {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .sched-type {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+  }
+  .type-main { background: rgba(168,85,247,0.15); color: var(--glow); }
+  .type-worship { background: rgba(245,200,66,0.15); color: var(--gold2); }
+  .type-workshop { background: rgba(56,189,248,0.15); color: var(--sky); }
+  .type-break { background: var(--section-alt); color: var(--text-muted); }
+  [data-theme="light"] .type-main { background: rgba(124,58,237,0.1); color: var(--violet); }
+  [data-theme="light"] .type-worship { background: rgba(232,160,32,0.15); color: var(--gold2); }
+
+  /* ====== EXPERIENCE / FEATURES ====== */
+  .experience-section {
+    padding: 8rem 2rem;
+    background: var(--section-alt);
+    overflow: hidden;
+  }
+  .experience-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .experience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 4rem;
+  }
+  @media (max-width: 900px) { .experience-grid { grid-template-columns: 1fr; } }
+  .exp-card {
+    padding: 2.5rem;
+    border-radius: 24px;
+    border: 1px solid var(--card-stroke);
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  .exp-card:hover { transform: translateY(-6px); }
+  .exp-card-featured {
+    grid-column: span 2;
+    background: linear-gradient(135deg, rgba(74,29,150,0.5) 0%, rgba(124,58,237,0.3) 100%);
+    border-color: rgba(168,85,247,0.3);
+  }
+  [data-theme="light"] .exp-card-featured {
+    background: linear-gradient(135deg, rgba(74,29,150,0.08) 0%, rgba(124,58,237,0.06) 100%);
+    border-color: rgba(124,58,237,0.2);
+  }
+  @media (max-width: 900px) { .exp-card-featured { grid-column: span 1; } }
+
+  .exp-icon {
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  .exp-icon-purple { background: rgba(168,85,247,0.2); }
+  .exp-icon-gold { background: rgba(245,200,66,0.2); }
+  .exp-icon-pink { background: rgba(236,72,153,0.2); }
+  .exp-icon-sky { background: rgba(56,189,248,0.2); }
+
+  .exp-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 0.8rem;
+  }
+  .exp-body {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+  .exp-card-bg-glow {
+    position: absolute;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(60px);
+    opacity: 0.3;
+    bottom: -50px; right: -50px;
+  }
+  .exp-card-featured .exp-card-bg-glow { background: var(--glow); }
+
+  /* ====== LOCATION ====== */
+  .location-section {
+    padding: 8rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  @media (max-width: 768px) { .location-section { grid-template-columns: 1fr; gap: 3rem; } }
+
+  .location-map {
+    aspect-ratio: 1;
+    border-radius: 28px;
+    background: var(--section-alt);
+    border: 1px solid var(--card-stroke);
+    overflow: hidden;
+    position: relative;
+  }
+  .map-inner {
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .map-grid-svg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.3;
+  }
+  .map-pin {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: pinBounce 2s ease-in-out infinite;
+  }
+  @keyframes pinBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .map-pin-head {
+    width: 50px; height: 50px;
+    background: linear-gradient(135deg, var(--gold), var(--gold2));
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(245,200,66,0.5);
+  }
+  .map-pin-head .pin-icon {
+    transform: rotate(45deg);
+    font-size: 1.2rem;
+  }
+  .map-pin-shadow {
+    width: 20px; height: 8px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    margin-top: 4px;
+    filter: blur(3px);
+  }
+  .map-rings {
+    position: absolute;
+    inset: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .map-ring-pulse {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid rgba(245,200,66,0.4);
+    animation: ringPulse 3s ease-out infinite;
+  }
+  .map-ring-pulse:nth-child(2) { animation-delay: 1s; }
+  .map-ring-pulse:nth-child(3) { animation-delay: 2s; }
+  @keyframes ringPulse {
+    from { width: 60px; height: 60px; opacity: 0.8; }
+    to { width: 160px; height: 160px; opacity: 0; }
+  }
+
+  .location-info .section-label { margin-bottom: 1rem; }
+  .location-details {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .loc-detail {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.2rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-stroke);
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+    transition: border-color 0.2s;
+  }
+  .loc-detail:hover { border-color: rgba(245,200,66,0.3); }
+  [data-theme="light"] .loc-detail:hover { border-color: rgba(124,58,237,0.3); }
+  .loc-icon {
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    background: rgba(245,200,66,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  [data-theme="light"] .loc-icon { background: rgba(124,58,237,0.1); }
+  .loc-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.3rem;
+  }
+  .loc-value {
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+  }
+
+  /* ====== REGISTRATION CTA ====== */
+  .cta-section {
+    padding: 8rem 2rem;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .cta-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(124,58,237,0.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  [data-theme="light"] .cta-bg {
+    background: radial-gradient(ellipse at center, rgba(124,58,237,0.1) 0%, transparent 70%);
+  }
+  .cta-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .cta-big-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 10vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    color: var(--text-primary);
+    margin: 1.5rem 0 2rem;
+  }
+  .cta-big-text .cta-highlight {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--glow) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  [data-theme="light"] .cta-big-text .cta-highlight {
+    background: linear-gradient(135deg, var(--violet) 0%, var(--pink) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  .cta-sub {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+  .cta-price-pills {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+  .price-pill {
+    padding: 1.5rem 2rem;
+    border-radius: 20px;
+    border: 1px solid var(--card-stroke);
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    min-width: 160px;
+    transition: transform 0.2s, border-color 0.2s;
+    cursor: default;
+  }
+  .price-pill:hover { transform: scale(1.04); }
+  .price-pill.featured { border-color: var(--gold); }
+  [data-theme="light"] .price-pill.featured { border-color: var(--violet); }
+  .price-type {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+  .price-amount {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    line-height: 1;
+    color: var(--text-primary);
+  }
+  .price-currency {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    vertical-align: super;
+  }
+  .price-note {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--gold);
+    margin-top: 0.4rem;
+    letter-spacing: 0.08em;
+  }
+  [data-theme="light"] .price-note { color: var(--violet); }
+
+  /* ====== FOOTER ====== */
+  footer {
+    background: var(--deep);
+    color: rgba(250,246,239,0.6);
+    padding: 4rem 2rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  [data-theme="light"] footer {
+    background: #0A080E;
+    color: rgba(250,246,239,0.5);
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 2rem;
+  }
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 0.08em;
+    color: var(--cream);
+    line-height: 1;
+  }
+  .footer-tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(250,246,239,0.4);
+    margin-top: 0.5rem;
+  }
+  .footer-links-col h4 {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .footer-links-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .footer-links-col a {
+    font-size: 0.85rem;
+    color: rgba(250,246,239,0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links-col a:hover { color: var(--cream); }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-copy {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    color: rgba(250,246,239,0.3);
+  }
+  .footer-socials {
+    display: flex;
+    gap: 0.8rem;
+  }
+  .social-btn {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(250,246,239,0.5);
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s, transform 0.2s;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+  }
+  .social-btn:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+  /* Floating particles */
+  .particle {
+    position: fixed;
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 0;
+    opacity: 0;
+    animation: particleFly linear infinite;
+  }
+  @keyframes particleFly {
+    from { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.4; }
+    to { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    nav { padding: 1rem 1.2rem; }
+    .nav-links { display: none; }
+    .hero-title { font-size: clamp(4.5rem, 20vw, 8rem); }
+  }
+</style>
+</head>
+<body data-theme="light">
+<div class="noise"></div>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    PRESENCE
+    <span class="nav-logo-badge">SIBKL 2026</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#speakers">Speakers</a></li>
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#location">Location</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+      <div class="toggle-thumb"></div>
+    </button>
+    <button class="nav-cta">Register Now</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+
+  <div class="hero-badge">
+    <span class="badge-dot"></span>
+    Registration Open · Limited Seats
+  </div>
+
+  <p class="hero-eyebrow">Sidang Injil Borneo · Kuala Lumpur</p>
+
+  <h1 class="hero-title">
+    <span class="word-presence">PRESENCE</span>
+    <span class="word-conf">Conference</span>
+    <span class="word-year">/ / / 2026</span>
+  </h1>
+
+  <p class="hero-sub">
+    Step into something <strong>real</strong>. A generation gathering to encounter God, reclaim worship, and ignite purpose — together, in one room.
+  </p>
+
+  <div class="hero-actions">
+    <button class="btn-primary">Secure Your Spot</button>
+    <button class="btn-secondary">Learn More ↓</button>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">3K+</div>
+      <div class="stat-label">Expected Attendees</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">12+</div>
+      <div class="stat-label">Speakers & Artists</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Power-Packed Days</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">1</div>
+      <div class="stat-label">Encounter</div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-mouse"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-band">
+  <div class="marquee-track">
+    <!-- repeated for seamless loop -->
+    <span class="marquee-item">PRESENCE CONF <span class="dot"></span></span>
+    <span class="marquee-item">SIBKL 2026 <span class="dot"></span></span>
+    <span class="marquee-item">WORSHIP <span class="dot"></span></span>
+    <span class="marquee-item">ENCOUNTER GOD <span class="dot"></span></span>
+    <span class="marquee-item">KUALA LUMPUR <span class="dot"></span></span>
+    <span class="marquee-item">GENERATION <span class="dot"></span></span>
+    <span class="marquee-item">PRESENCE CONF <span class="dot"></span></span>
+    <span class="marquee-item">SIBKL 2026 <span class="dot"></span></span>
+    <span class="marquee-item">WORSHIP <span class="dot"></span></span>
+    <span class="marquee-item">ENCOUNTER GOD <span class="dot"></span></span>
+    <span class="marquee-item">KUALA LUMPUR <span class="dot"></span></span>
+    <span class="marquee-item">GENERATION <span class="dot"></span></span>
+    <span class="marquee-item">PRESENCE CONF <span class="dot"></span></span>
+    <span class="marquee-item">SIBKL 2026 <span class="dot"></span></span>
+    <span class="marquee-item">WORSHIP <span class="dot"></span></span>
+    <span class="marquee-item">ENCOUNTER GOD <span class="dot"></span></span>
+    <span class="marquee-item">KUALA LUMPUR <span class="dot"></span></span>
+    <span class="marquee-item">GENERATION <span class="dot"></span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-visual reveal">
+    <div class="about-ring ring1">
+      <div class="about-ring-dot"></div>
+    </div>
+    <div class="about-ring ring2"></div>
+    <div class="about-ring ring3"></div>
+    <div class="about-center-blob"></div>
+  </div>
+  <div class="about-text reveal">
+    <span class="section-label">What is Presence</span>
+    <h2 class="section-title">More Than a<br>Conference.</h2>
+    <p class="about-body">
+      Presence is <span class="highlight">SIBKL's annual gathering</span> for the next generation — a convergence of youth, young adults, and students from across Malaysia and beyond.
+      <br><br>
+      This isn't a hype event. It's a <span class="highlight">holy collision</span> — where heaven meets earth, where the ordinary becomes extraordinary, and where the generation of this moment finds its voice.
+    </p>
+    <div class="about-quote">
+      <blockquote>"Where two or three gather in my name, there am I with them."</blockquote>
+      <cite>— Matthew 18:20 · The Anchor Verse</cite>
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKERS -->
+<section class="speakers-section" id="speakers">
+  <div class="speakers-inner">
+    <div class="speakers-header reveal">
+      <div>
+        <span class="section-label">Voices</span>
+        <h2 class="section-title">The Speakers</h2>
+      </div>
+      <button class="btn-secondary">View All ↗</button>
+    </div>
+    <div class="speakers-grid">
+
+      <div class="speaker-card reveal">
+        <div class="speaker-avatar" style="background: linear-gradient(135deg, #F5C842, #E8A020);">JC</div>
+        <div class="speaker-name">Pastor Joshua Chong</div>
+        <div class="speaker-role">Lead Pastor · SIBKL</div>
+        <span class="speaker-origin">🇲🇾 Malaysia</span>
+        <p class="speaker-topic">Opening the Heavens — Understanding God's Presence</p>
+      </div>
+
+      <div class="speaker-card reveal">
+        <div class="speaker-avatar" style="background: linear-gradient(135deg, #A855F7, #7C3AED);">SR</div>
+        <div class="speaker-name">Sarah Reeves</div>
+        <div class="speaker-role">Worship Leader & Recording Artist</div>
+        <span class="speaker-origin">🇺🇸 USA</span>
+        <p class="speaker-topic">Sound & Spirit — Worship as a Lifestyle</p>
+      </div>
+
+      <div class="speaker-card reveal">
+        <div class="speaker-avatar" style="background: linear-gradient(135deg, #EC4899, #BE185D);">MK</div>
+        <div class="speaker-name">Min-kyu Park</div>
+        <div class="speaker-role">Youth Pastor & Author</div>
+        <span class="speaker-origin">🇰🇷 South Korea</span>
+        <p class="speaker-topic">Generation Z and the Kingdom Call</p>
+      </div>
+
+      <div class="speaker-card reveal">
+        <div class="speaker-avatar" style="background: linear-gradient(135deg, #38BDF8, #0284C7);">AT</div>
+        <div class="speaker-name">Adeline Tan</div>
+        <div class="speaker-role">Campus Director · SIBKL Youth</div>
+        <span class="speaker-origin">🇲🇾 Malaysia</span>
+        <p class="speaker-topic">Rooted & Rising — Faith in Your 20s</p>
+      </div>
+
+      <div class="speaker-card reveal">
+        <div class="speaker-avatar" style="background: linear-gradient(135deg, #34D399, #059669);">DO</div>
+        <div class="speaker-name">David Oginde</div>
+        <div class="speaker-role">International Speaker & Revivalist</div>
+        <span class="speaker-origin">🇰🇪 Kenya</span>
+        <p class="speaker-topic">Fire That Never Dies — Sustaining the Move of God</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule-section" id="schedule">
+  <div class="schedule-header reveal">
+    <span class="section-label">Programme</span>
+    <h2 class="section-title">3 Days.<br>Infinite Impact.</h2>
+    <div class="schedule-tabs">
+      <button class="sched-tab active" data-day="1">Day 01</button>
+      <button class="sched-tab" data-day="2">Day 02</button>
+      <button class="sched-tab" data-day="3">Day 03</button>
+    </div>
+  </div>
+
+  <div class="schedule-grid" id="scheduleGrid">
+    <!-- Populated by JS -->
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience-section" id="experience">
+  <div class="experience-inner">
+    <div class="reveal" style="text-align:center; max-width:600px; margin:0 auto 0;">
+      <span class="section-label" style="justify-content:center;">The Experience</span>
+      <h2 class="section-title" style="text-align:center;">Built Different.<br>On Purpose.</h2>
+    </div>
+
+    <div class="experience-grid">
+      <div class="exp-card exp-card-featured reveal">
+        <div class="exp-icon exp-icon-purple">🔥</div>
+        <h3 class="exp-title">Night Sessions That Hit Different</h3>
+        <p class="exp-body">Three nights of unscripted worship encounters, prayer, and moments that you'll carry forever. No agenda. Just God. The electricity in the room is something you feel in your chest.</p>
+        <div class="exp-card-bg-glow"></div>
+      </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-icon exp-icon-gold">🎤</div>
+        <h3 class="exp-title">Breakout Sessions</h3>
+        <p class="exp-body">Deep-dive workshops led by practitioners — ministry, mental health, creativity, leadership, and calling.</p>
+      </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-icon exp-icon-pink">🎨</div>
+        <h3 class="exp-title">Creative Arts Showcase</h3>
+        <p class="exp-body">A curated space where young creatives present faith-rooted art, film, and expression.</p>
+      </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-icon exp-icon-sky">🌐</div>
+        <h3 class="exp-title">Global Community</h3>
+        <p class="exp-body">Connect with believers from 20+ nations. Real friendships. Real networks. Real family.</p>
+      </div>
+
+      <div class="exp-card reveal" style="grid-column: span 1;">
+        <div class="exp-icon exp-icon-purple">🙌</div>
+        <h3 class="exp-title">Live Worship Experience</h3>
+        <p class="exp-body">SIBKL Worship Band leads with original music, creating an atmosphere where heaven and earth collide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location-section" id="location">
+  <div class="location-map reveal">
+    <div class="map-inner">
+      <svg class="map-grid-svg" viewBox="0 0 400 400" fill="none">
+        <defs>
+          <pattern id="locgrid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+          </pattern>
+        </defs>
+        <rect width="400" height="400" fill="url(#locgrid)" opacity="0.5"/>
+        <!-- KL skyline silhouette simplified -->
+        <rect x="160" y="280" width="8" height="80" fill="currentColor" opacity="0.15" rx="1"/>
+        <polygon points="164,240 170,280 158,280" fill="currentColor" opacity="0.15"/>
+        <rect x="195" y="300" width="12" height="60" fill="currentColor" opacity="0.12" rx="1"/>
+        <rect x="220" y="290" width="10" height="70" fill="currentColor" opacity="0.12" rx="1"/>
+        <rect x="140" y="310" width="14" height="50" fill="currentColor" opacity="0.1" rx="1"/>
+      </svg>
+      <div class="map-rings">
+        <div class="map-ring-pulse"></div>
+        <div class="map-ring-pulse"></div>
+        <div class="map-ring-pulse"></div>
+      </div>
+      <div class="map-pin">
+        <div class="map-pin-head">
+          <span class="pin-icon">✦</span>
+        </div>
+        <div class="map-pin-shadow"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="location-info reveal">
+    <span class="section-label">Venue</span>
+    <h2 class="section-title">Kuala<br>Lumpur,<br>Malaysia.</h2>
+    <div class="location-details">
+      <div class="loc-detail">
+        <div class="loc-icon">📍</div>
+        <div>
+          <div class="loc-label">Venue</div>
+          <div class="loc-value">Idea Live Arena, 3 Damansara, Petaling Jaya</div>
+        </div>
+      </div>
+      <div class="loc-detail">
+        <div class="loc-icon">📅</div>
+        <div>
+          <div class="loc-label">Dates</div>
+          <div class="loc-value">August 13–15, 2026</div>
+        </div>
+      </div>
+      <div class="loc-detail">
+        <div class="loc-icon">⏰</div>
+        <div>
+          <div class="loc-label">Sessions Begin</div>
+          <div class="loc-value">Day 1: 6:00 PM Registration Open</div>
+        </div>
+      </div>
+      <div class="loc-detail">
+        <div class="loc-icon">🚌</div>
+        <div>
+          <div class="loc-label">Getting There</div>
+          <div class="loc-value">Shuttle service from SIBKL main campus provided</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="cta-inner reveal">
+    <span class="section-label" style="justify-content:center;">Don't Miss Out</span>
+    <h2 class="cta-big-text">
+      YOUR<br><span class="cta-highlight">MOMENT</span><br>IS NOW.
+    </h2>
+    <p class="cta-sub">Limited seats. Unlimited impact. Choose your ticket type and secure your place at the table.</p>
+
+    <div class="cta-price-pills">
+      <div class="price-pill">
+        <div class="price-type">Youth (18 & below)</div>
+        <div class="price-amount"><span class="price-currency">RM</span>88</div>
+        <div class="price-note">Early Bird Ends Soon</div>
+      </div>
+      <div class="price-pill featured">
+        <div class="price-type">Young Adult</div>
+        <div class="price-amount"><span class="price-currency">RM</span>128</div>
+        <div class="price-note">✦ Most Popular</div>
+      </div>
+      <div class="price-pill">
+        <div class="price-type">Full Package</div>
+        <div class="price-amount"><span class="price-currency">RM</span>188</div>
+        <div class="price-note">3 Days All-Access</div>
+      </div>
+    </div>
+
+    <button class="btn-primary" style="font-size:1.1rem; padding:1.1rem 3.5rem;">
+      Register Now — Secure Your Spot
+    </button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">PRESENCE</div>
+        <div class="footer-tagline">Sidang Injil Borneo · Kuala Lumpur · Est. 2010</div>
+      </div>
+      <div class="footer-links-col">
+        <h4>Conference</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Speakers</a></li>
+          <li><a href="#">Schedule</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Prayer Wall</a></li>
+          <li><a href="#">Livestream</a></li>
+          <li><a href="#">Merch Drop</a></li>
+          <li><a href="#">Media Kit</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Church</h4>
+        <ul>
+          <li><a href="#">sibkl.org</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Volunteer</a></li>
+          <li><a href="#">Give</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Sidang Injil Borneo Kuala Lumpur. All rights reserved.</div>
+      <div class="footer-socials">
+        <a href="#" class="social-btn">IG</a>
+        <a href="#" class="social-btn">TT</a>
+        <a href="#" class="social-btn">YT</a>
+        <a href="#" class="social-btn">FB</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── CURSOR ──
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+function animCursor() {
+  cursor.style.left = mx + 'px';
+  cursor.style.top = my + 'px';
+  rx += (mx - rx) * 0.15;
+  ry += (my - ry) * 0.15;
+  ring.style.left = rx + 'px';
+  ring.style.top = ry + 'px';
+  requestAnimationFrame(animCursor);
+}
+animCursor();
+document.querySelectorAll('a, button, .speaker-card, .exp-card, .sched-item, .price-pill').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursor.style.width = '20px'; cursor.style.height = '20px';
+    ring.style.width = '52px'; ring.style.height = '52px';
+  });
+  el.addEventListener('mouseleave', () => {
+    cursor.style.width = '12px'; cursor.style.height = '12px';
+    ring.style.width = '36px'; ring.style.height = '36px';
+  });
+});
+
+// ── THEME ──
+const toggle = document.getElementById('themeToggle');
+let theme = 'light';
+toggle.addEventListener('click', () => {
+  theme = theme === 'dark' ? 'light' : 'dark';
+  document.body.setAttribute('data-theme', theme);
+  document.getElementById('metaThemeColor').setAttribute('content', theme === 'dark' ? '#0A080E' : '#FAF6EF');
+});
+
+// ── SCHEDULE DATA ──
+const scheduleData = {
+  1: [
+    { time: '5:00 PM', title: 'Registration & Welcome', speaker: 'Presence Team', type: 'break' },
+    { time: '7:00 PM', title: 'Opening Night — Come As You Are', speaker: 'Pastor Joshua Chong', type: 'main' },
+    { time: '8:30 PM', title: 'Corporate Worship', speaker: 'SIBKL Worship Band', type: 'worship' },
+    { time: '9:30 PM', title: 'Activation & Prayer Ministry', speaker: 'Prayer Team', type: 'main' },
+  ],
+  2: [
+    { time: '9:00 AM', title: 'Morning Devotional', speaker: 'Adeline Tan', type: 'worship' },
+    { time: '10:00 AM', title: 'Breakout: Creativity & Faith', speaker: 'Creative Arts Team', type: 'workshop' },
+    { time: '12:00 PM', title: 'Lunch & Community', speaker: '', type: 'break' },
+    { time: '2:30 PM', title: 'Generation Z & The Kingdom', speaker: 'Min-kyu Park', type: 'main' },
+    { time: '4:00 PM', title: 'Breakout: Mental Health & Faith', speaker: 'Campus Directors', type: 'workshop' },
+    { time: '7:30 PM', title: 'Night Session II — Fire & Surrender', speaker: 'Sarah Reeves', type: 'main' },
+  ],
+  3: [
+    { time: '9:00 AM', title: 'Final Morning — Sending Service', speaker: 'All Speakers', type: 'worship' },
+    { time: '10:30 AM', title: 'Global Church: One Body', speaker: 'David Oginde', type: 'main' },
+    { time: '12:00 PM', title: 'Closing Worship & Commissioning', speaker: 'Full Team', type: 'worship' },
+    { time: '1:30 PM', title: 'Farewell Lunch & Connect', speaker: '', type: 'break' },
+  ]
+};
+
+const typeMap = { main: 'type-main', worship: 'type-worship', workshop: 'type-workshop', break: 'type-break' };
+const typeLabel = { main: 'Main Session', worship: 'Worship', workshop: 'Workshop', break: 'Break' };
+
+function renderSchedule(day) {
+  const grid = document.getElementById('scheduleGrid');
+  grid.innerHTML = '';
+  scheduleData[day].forEach(item => {
+    grid.innerHTML += `
+      <div class="sched-item">
+        <div class="sched-time">${item.time}</div>
+        <div>
+          <div class="sched-title">${item.title}</div>
+          ${item.speaker ? `<div class="sched-speaker">${item.speaker}</div>` : ''}
+          <span class="sched-type ${typeMap[item.type]}">${typeLabel[item.type]}</span>
+        </div>
+      </div>`;
+  });
+}
+renderSchedule(1);
+
+document.querySelectorAll('.sched-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.sched-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    renderSchedule(parseInt(tab.dataset.day));
+  });
+});
+
+// ── SCROLL REVEAL ──
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ── PARTICLES ──
+function spawnParticle() {
+  const p = document.createElement('div');
+  p.className = 'particle';
+  const size = Math.random() * 4 + 2;
+  const colors = ['#F5C842','#A855F7','#EC4899','#38BDF8'];
+  const color = colors[Math.floor(Math.random() * colors.length)];
+  const dur = Math.random() * 12 + 10;
+  const x = Math.random() * 100;
+  p.style.cssText = `
+    left:${x}vw; bottom:0;
+    width:${size}px; height:${size}px;
+    background:${color};
+    animation-duration:${dur}s;
+    animation-delay:${Math.random() * dur}s;
+  `;
+  document.body.appendChild(p);
+  setTimeout(() => p.remove(), (dur + 10) * 1000);
+}
+for(let i = 0; i < 18; i++) spawnParticle();
+setInterval(spawnParticle, 3000);
+
+// ── PARALLAX HERO ──
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  document.querySelector('.hero-grid').style.transform =
+    `perspective(600px) rotateX(35deg) scaleX(1.4) translateY(calc(15% + ${y*0.15}px))`;
+  document.querySelector('.orb1').style.transform = `translateY(${y*0.08}px)`;
+  document.querySelector('.orb2').style.transform = `translateY(${-y*0.05}px)`;
+});
+</script>
+</body>
+</html>
